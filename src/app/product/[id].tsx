@@ -1,15 +1,25 @@
 import { AddCartButton } from "@/components/add-cart-button";
 import { ReturnButton } from "@/components/return-button";
+import { useCartStore } from "@/stores/cart-store";
 import { PRODUCTS } from "@/utils/data/products";
 import { formatCurrency } from "@/utils/functions/format-currency";
 import { Feather } from "@expo/vector-icons";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useNavigation } from "expo-router";
 import { Image, Text, View } from "react-native";
 
 const Product = () => {
     const { id } = useLocalSearchParams();
 
+    const cartStore = useCartStore();
+
+    const navigation = useNavigation();
+
     const product = PRODUCTS.filter((item) => item.id === id)[0];
+
+    function handleAddToCart() {
+        cartStore.addProduct(product);
+        navigation.goBack();
+    }
 
     return (
         <View className="flex-1 relative">
@@ -38,9 +48,9 @@ const Product = () => {
                 ))}
             </View>
             <View className="p-5 pb-8 gap-5">
-                <AddCartButton>
+                <AddCartButton onPress={handleAddToCart}>
                     <AddCartButton.Icon>
-                        <Feather name="plus-circle" size={16} color="#000" />
+                        <Feather name="plus-circle" size={16} />
                     </AddCartButton.Icon>
                     <AddCartButton.Text>Adicionar ao pedido</AddCartButton.Text>
                 </AddCartButton>
