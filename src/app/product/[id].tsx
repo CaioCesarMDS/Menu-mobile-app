@@ -1,4 +1,5 @@
 import { AddCartButton } from "@/components/add-cart-button";
+import { ReturnButton } from "@/components/return-button";
 import { PRODUCTS } from "@/utils/data/products";
 import { formatCurrency } from "@/utils/functions/format-currency";
 import { Feather } from "@expo/vector-icons";
@@ -11,8 +12,9 @@ const Product = () => {
     const product = PRODUCTS.filter((item) => item.id === id)[0];
 
     return (
-        <View className="flex-1">
-            <Image source={product.cover} className="w-full h-52 " resizeMode="cover" />
+        <View className="flex-1 relative">
+            <Image source={product.cover} className="w-full h-52" resizeMode="cover" />
+            <ReturnButton href="/" title="Voltar" />
             <View className="p-5 mt-4 flex-1">
                 <Text className="text-lime-400 text-2xl font-heading">
                     {product.title}
