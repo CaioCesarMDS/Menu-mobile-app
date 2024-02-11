@@ -2,7 +2,7 @@ import { CategoryButton } from "@/components/category-button";
 import { Header } from "@/components/header";
 import { Product } from "@/components/product";
 import { useCartStore } from "@/stores/cart-store";
-import { CATEGORIES, MENU } from "@/utils/data/products";
+import { CATEGORIES, MENU, ProductProps } from "@/utils/data/products";
 import { Link } from "expo-router";
 import { useRef, useState } from "react";
 import { FlatList, SectionList, Text, View } from "react-native";
@@ -10,7 +10,7 @@ import { FlatList, SectionList, Text, View } from "react-native";
 const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>(CATEGORIES[0]);
 
-    const sectionListRef = useRef<SectionList>(null);
+    const sectionListRef = useRef<SectionList<ProductProps>>(null);
 
     const cartStore = useCartStore();
 

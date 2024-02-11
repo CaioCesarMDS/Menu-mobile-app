@@ -4,7 +4,7 @@ import { useCartStore } from "@/stores/cart-store";
 import { PRODUCTS } from "@/utils/data/products";
 import { formatCurrency } from "@/utils/functions/format-currency";
 import { Feather } from "@expo/vector-icons";
-import { useLocalSearchParams, useNavigation } from "expo-router";
+import { Redirect, useLocalSearchParams, useNavigation } from "expo-router";
 import { Image, Text, View } from "react-native";
 
 const Product = () => {
@@ -14,11 +14,17 @@ const Product = () => {
 
     const navigation = useNavigation();
 
-    const product = PRODUCTS.filter((item) => item.id === id)[0];
+    const product = PRODUCTS.find((item) => item.id === id);
 
     function handleAddToCart() {
-        cartStore.addProduct(product);
-        navigation.goBack();
+        if (product) {
+            cartStore.addProduct(product);
+            navigation.goBack();
+        }
+    }
+
+    if (!product) {
+        return <Redirect href="/" />;
     }
 
     return (
@@ -26,7 +32,7 @@ const Product = () => {
             <Image source={product.cover} className="w-full h-52" resizeMode="cover" />
             <ReturnButton href="/" title="Voltar" />
             <View className="p-5 mt-4 flex-1">
-                <Text className="text-lime-400 text-2xl font-heading">
+                <Text className="text-lime-400 text-xl font-heading">
                     {product.title}
                 </Text>
                 <Text className="text-slate-400 text-base leading-6 font-body mt-3">
