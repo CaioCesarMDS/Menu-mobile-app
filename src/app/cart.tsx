@@ -2,7 +2,6 @@ import { AddCartButton } from "@/components/add-cart-button";
 import { Header } from "@/components/header";
 import { InputUserData } from "@/components/input-user-data";
 import { Product } from "@/components/product";
-import { ReturnButton } from "@/components/return-button";
 
 import { useState } from "react";
 
@@ -11,7 +10,7 @@ import { formatCurrency } from "@/utils/functions/format-currency";
 
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
-import { Alert, ScrollView, Text, View, Linking } from "react-native";
+import { Alert, Linking, ScrollView, Text, View } from "react-native";
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import colors from "tailwindcss/colors";
@@ -64,11 +63,6 @@ const Cart = () => {
     return (
         <View className="flex-1 pt-10">
             <Header title="Seu carrinho" />
-            <ReturnButton
-                title="Voltar"
-                href="/"
-                className="top-32 transform scale-110"
-            />
             <KeyboardAwareScrollView>
                 <ScrollView>
                     <View className="p-5 flex-1">
