@@ -13,6 +13,7 @@ type StateProps = {
     products: ProductCartProps[];
     addProduct: (product: ProductProps) => void;
     removeProduct: (product: string) => void;
+    clearCart: () => void;
 };
 
 export const useCartStore = create(persist<StateProps>((set) => ({
@@ -27,6 +28,8 @@ export const useCartStore = create(persist<StateProps>((set) => ({
         set((state) => ({
             products: cartInMemory.remove(state.products, productId),
         })),
+
+    clearCart: () => set({ products: [] }),
 }),{
     name: "menu-mobile-app:cart-store",
     storage: createJSONStorage(() => AsyncStorage),

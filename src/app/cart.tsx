@@ -4,17 +4,22 @@ import { InputUserData } from "@/components/input-user-data";
 import { Product } from "@/components/product";
 import { ReturnButton } from "@/components/return-button";
 
+import { useState } from "react";
+
 import { ProductCartProps, useCartStore } from "@/stores/cart-store";
 import { formatCurrency } from "@/utils/functions/format-currency";
 
 import { Feather } from "@expo/vector-icons";
-import { Alert, ScrollView, Text, View } from "react-native";
+import { useNavigation } from "expo-router";
+import { Alert, ScrollView, Text, View, Linking } from "react-native";
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import colors from "tailwindcss/colors";
 
 const Cart = () => {
     const cartStore = useCartStore();
+    const [address, setAddress] = useState("");
+    const navigation = useNavigation();
 
     const total = formatCurrency(
         cartStore.products.reduce(
@@ -33,6 +38,27 @@ const Cart = () => {
                 onPress: () => cartStore.removeProduct(product.id),
             },
         ]);
+    }
+
+    function handleSendOrder() {
+        if (address.trim().length === 0) {
+            return Alert.alert(
+                "Endereço de entrega",
+                "Informe o endereço de entrega para prosseguir com o pedido."
+            );
+        }
+
+        const products = cartStore.products
+            .map((product) => `\n ${product.title}  x${product.quantity}`)
+            .join("");
+
+        const messageOrder = `🍔 Olá, gostaria de fazer um pedido com os seguintes itens:
+        ${products} \n\nEndereço de entrega: ${address} \n\nValor total: ${total}`;
+
+        Linking.openURL(`https://wa.me/5581987881191?text=${messageOrder}`);
+
+        cartStore.clearCart();
+        navigation.goBack();
     }
 
     return (
@@ -78,7 +104,13 @@ const Cart = () => {
                                         {total}
                                     </Text>
                                 </View>
-                                <InputUserData placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento." />
+                                <InputUserData
+                                    placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento."
+                                    onChangeText={setAddress}
+                                    blurOnSubmit={true}
+                                    onSubmitEditing={handleSendOrder}
+                                    returnKeyType="next"
+                                />
                             </View>
                         ) : (
                             <></>
@@ -88,7 +120,7 @@ const Cart = () => {
             </KeyboardAwareScrollView>
             {cartStore.products.length > 0 ? (
                 <View className="p-5 gap-5">
-                    <AddCartButton>
+                    <AddCartButton onPress={handleSendOrder}>
                         <AddCartButton.Text>Enviar pedido</AddCartButton.Text>
                         <AddCartButton.Icon>
                             <Feather name="arrow-right-circle" size={20} />
