@@ -1,8 +1,10 @@
+import { CartIcon } from "./cartIcon";
+
 import { Feather } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Image, Text, View } from "react-native";
+
 import colors from "tailwindcss/colors";
-import { CartIcon } from "./cartIcon";
 
 type HeaderProps = {
     title: string;

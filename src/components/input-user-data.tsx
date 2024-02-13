@@ -1,4 +1,5 @@
 import { TextInput, TextInputProps} from "react-native";
+
 import colors from "tailwindcss/colors";
 
 export const InputUserData = ({ ...rest }: TextInputProps) => {

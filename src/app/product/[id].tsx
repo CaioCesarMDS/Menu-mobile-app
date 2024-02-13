@@ -1,8 +1,10 @@
 import { AddCartButton } from "@/components/add-cart-button";
 import { ReturnButton } from "@/components/return-button";
 import { useCartStore } from "@/stores/cart-store";
+
 import { PRODUCTS } from "@/utils/data/products";
 import { formatCurrency } from "@/utils/functions/format-currency";
+
 import { Feather } from "@expo/vector-icons";
 import { Redirect, useLocalSearchParams, useNavigation } from "expo-router";
 import { Image, Text, View } from "react-native";

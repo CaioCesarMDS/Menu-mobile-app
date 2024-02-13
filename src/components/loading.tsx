@@ -1,4 +1,5 @@
 import { ActivityIndicator, View } from "react-native";
+
 import colors from "tailwindcss/colors";
 
 export const Loading = () => {
