@@ -41,9 +41,12 @@ const Product = () => {
                 <Text className="text-lime-400  text-2xl font-heading mt-6">
                     {formatCurrency(product.price)}
                 </Text>
-                <Text className="text-slate-100 text-xl  font-subtitle mt-6 mb-3">
-                    Ingredientes:
-                </Text>
+                {product.ingredients.length > 0 && (
+                    <Text className="text-slate-100 text-xl  font-subtitle mt-6 mb-3">
+                        Ingredientes:
+                    </Text>
+                )}
+
                 {product.ingredients.map((ingredient) => (
                     <Text
                         key={ingredient}
