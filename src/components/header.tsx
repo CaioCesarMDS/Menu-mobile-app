@@ -1,4 +1,5 @@
 import { Feather } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import colors from "tailwindcss/colors";
 
@@ -19,21 +20,23 @@ export const Header = ({ title, cartQuantityItems = 0 }: HeaderProps) => {
                 <Text className="text-white text-xl font-heading pt-2 ">{title}</Text>
             </View>
 
-            {cartQuantityItems > 0 ? (
-                <TouchableOpacity className="relative">
-                    <View className="bg-lime-300 w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5 opacity-90">
-                        <Text className="text-slate-950 font-bold text-xs ">
-                            {cartQuantityItems}
-                        </Text>
-                    </View>
+            <Link href={"/cart"} asChild>
+                {cartQuantityItems > 0 ? (
+                    <TouchableOpacity className="relative">
+                        <View className="bg-lime-300 w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5 opacity-90">
+                            <Text className="text-slate-950 font-bold text-xs ">
+                                {cartQuantityItems}
+                            </Text>
+                        </View>
 
-                    <Feather name="shopping-bag" size={24} color={colors.white} />
-                </TouchableOpacity>
-            ) : (
-                <TouchableOpacity className="pt-4">
-                    <Feather name="shopping-bag" size={24} color={colors.white} />
-                </TouchableOpacity>
-            )}
+                        <Feather name="shopping-bag" size={24} color={colors.white} />
+                    </TouchableOpacity>
+                ) : (
+                    <TouchableOpacity className="pt-4">
+                        <Feather name="shopping-bag" size={24} color={colors.white} />
+                    </TouchableOpacity>
+                )}
+            </Link>
         </View>
     );
 };
