@@ -82,11 +82,11 @@ npx expo start
  <br>
 
 <ul>
-    <li><strong>React-Native</strong>: biblioteca JavaScript para o desenvolvimento de aplicativos móveis multiplataforma..</li>
+    <li><strong>React-Native</strong>: biblioteca JavaScript para o desenvolvimento de aplicativos móveis multiplataforma.</li>
     <br>
     <li><strong>Expo</strong>: plataforma que facilita o desenvolvimento e a implantação de aplicativos React Native.</li>
     <br>
-    <li><strong>TypeScript</strong>: Utilizado para adicionar tipagem estática ao código, proporcionando maior segurança e facilidade de manutenção.</li>
+    <li><strong>TypeScript</strong>: Linguagem de programação que estende o JavaScript adicionando tipagem estática opcional, permitindo o desenvolvimento de código mais seguro e com menos erros.</li>
     <br>
     <li><strong>Tailwind.css</strong>: framework CSS para estilização dos componentes.</li>
     <br>
