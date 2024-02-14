@@ -86,7 +86,7 @@ npx expo start
     <br>
     <li><strong>Expo</strong>: plataforma que facilita o desenvolvimento e a implantação de aplicativos React Native.</li>
     <br>
-    <li><strong>TypeScript</strong>: Linguagem de programação que estende o JavaScript adicionando tipagem estática opcional, permitindo o desenvolvimento de código mais seguro e com menos erros.</li>
+    <li><strong>TypeScript</strong>: Linguagem de programação que estende o JavaScript adicionando tipagem estática , permitindo o desenvolvimento de código mais seguro e com menos erros.</li>
     <br>
     <li><strong>Tailwind.css</strong>: framework CSS para estilização dos componentes.</li>
     <br>
