@@ -39,15 +39,6 @@ export const Header = ({ title, cartQuantityItems = 0 }: HeaderProps) => {
                     <Link href={"/"} asChild>
                         <CartIcon className="pt-4">
                             <CartIcon.Icon>
-                                <View className="bg-red-500 w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5 opacity-90">
-                                    <CartIcon.QuantityIcon>
-                                        <Feather
-                                            name="x"
-                                            size={12}
-                                            color={colors.white}
-                                        />
-                                    </CartIcon.QuantityIcon>
-                                </View>
                                 <Feather
                                     name="shopping-bag"
                                     size={24}
