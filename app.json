@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#07172a"
-      }
+      },
+      "package": "com.caiocesarmds.menumobileapp"
     },
     "web": {
       "bundler": "metro",
