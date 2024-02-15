@@ -15,7 +15,8 @@
 
 <p align="right>
   
-  Aqui está disponível o aplicativo em APK para dispositivos androids. ➡ [APK](https://drive.google.com/drive/u/0/folders/1Zj6KeuoE2DJbdMidXuRtvBfnqW02xQ92)
+  Aqui está disponível o aplicativo em APK para dispositivos androids. ➡
+  [APK](https://drive.google.com/drive/u/0/folders/1Zj6KeuoE2DJbdMidXuRtvBfnqW02xQ92)
 </p>
   
 
