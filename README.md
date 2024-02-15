@@ -9,7 +9,15 @@
 <br>
 
 <h1>Sobre o Projeto</h1>
-<p>Este é um aplicativo móvel desenvolvido em React Native para facilitar a realização de pedidos de alimentos. Ele permite aos usuários visualizar produtos por categoria, adicionar itens ao carrinho e enviar pedidos via WhatsApp.</p>
+<p>
+  Este é um aplicativo móvel desenvolvido em React Native para facilitar a realização de pedidos de alimentos. Ele permite aos usuários visualizar produtos por categoria, adicionar itens ao carrinho e enviar pedidos via WhatsApp.
+</p>
+
+<p align="right>
+  
+  Aqui está disponível o aplicativo em APK para dispositivos androids. ➡ [APK](https://drive.google.com/drive/u/0/folders/1Zj6KeuoE2DJbdMidXuRtvBfnqW02xQ92)
+</p>
+  
 
 <br>
 
@@ -19,8 +27,9 @@
     <li>Expo Go</li> 
 </ul>
 </p>
-Se você não tiver [Node](https://nodejs.org/en) <strong>(Recomendável versão LTS)</strong> <br>
-Se você não tiver [ExpoGo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&gl=US&pli=1) 
+
+Se você não tiver o [Node](https://nodejs.org/en) <strong>(Recomendável versão LTS)</strong> <br><br>
+Se você não tiver o [ExpoGo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&gl=US&pli=1) 
 <br>
 
 <h1>Instalação</h1>
