@@ -13,7 +13,7 @@
   Este é um aplicativo móvel desenvolvido em React Native para facilitar a realização de pedidos de alimentos. Ele permite aos usuários visualizar produtos por categoria, adicionar itens ao carrinho e enviar pedidos via WhatsApp.
 </p>
 
-<p align="right>
+<p align="right">
   
   Aqui está disponível o aplicativo em APK para dispositivos androids. ➡
   [APK](https://drive.google.com/drive/u/0/folders/1Zj6KeuoE2DJbdMidXuRtvBfnqW02xQ92)
